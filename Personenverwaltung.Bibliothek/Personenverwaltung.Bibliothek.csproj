@@ -4,16 +4,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{E4CD5C51-95DE-4BC9-9E99-F35AF53F20FD}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>Personenverwaltung.Konsole</RootNamespace>
-    <AssemblyName>Personenverwaltung.Konsole</AssemblyName>
+    <ProjectGuid>{3A025ADC-F9A4-4BBA-873E-8E455D916D97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Personenverwaltung.Bibliothek</RootNamespace>
+    <AssemblyName>Personenverwaltung.Bibliothek</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,7 +22,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -42,17 +40,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Converter.cs" />
+    <Compile Include="Mitarbeiter.cs" />
+    <Compile Include="MyExtensionsKlasse.cs" />
+    <Compile Include="Person.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Personenverwaltung.Bibliothek\Personenverwaltung.Bibliothek.csproj">
-      <Project>{3a025adc-f9a4-4bba-873e-8e455d916d97}</Project>
-      <Name>Personenverwaltung.Bibliothek</Name>
-    </ProjectReference>
+    <Compile Include="Vorgesetzter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
