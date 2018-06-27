@@ -32,5 +32,10 @@ namespace Personenverwaltung.Bibliothek
 
             //Falls man eine Methode nicht gleich implementiert wird sollte man zumindest  eine Exception werfen -->throw new NotImplementedException();
         }
+
+        public static Mitarbeiter ToMitarbeiter(Vorgesetzter vorgesetzer,decimal gehalt)
+        {
+            return new Mitarbeiter(vorgesetzer.VollstaendigerName, vorgesetzer.Nachname, vorgesetzer.GeburtsDatum, vorgesetzer.Svnr, gehalt);
+        }
     }
 }

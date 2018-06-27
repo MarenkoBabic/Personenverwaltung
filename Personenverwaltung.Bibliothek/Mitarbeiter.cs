@@ -29,6 +29,7 @@ namespace Personenverwaltung.Bibliothek
             }
         }
 
+
         public Mitarbeiter(string vorname, string nachname, DateTime geburtsdatum,string svnr,decimal gehalt) : base(vorname, nachname, geburtsdatum, svnr)
         {
             Gehalt = gehalt;

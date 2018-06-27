@@ -55,7 +55,7 @@ namespace Personenverwaltung.Bibliothek
             //_svnr = svnr;
 
 
-            setzteStandartwerte(Position.Mentor, untergebene);//Standartmäßig wird jeder vorgesetzer zum Mentor
+            SetzteStandartwerte(Position.Mentor, untergebene);//Standartmäßig wird jeder vorgesetzer zum Mentor
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Personenverwaltung.Bibliothek
 
         public Vorgesetzter(string vorname, string nachname, DateTime geburtsdatum, string svnr, Position leitungsPosition, List<Person> untergebene) : base(vorname, nachname, geburtsdatum, svnr)
         {
-            setzteStandartwerte(leitungsPosition, untergebene);
+            SetzteStandartwerte(leitungsPosition, untergebene);
         }
 
         /// <summary>
@@ -150,7 +150,7 @@ namespace Personenverwaltung.Bibliothek
         /// </summary>
         /// <param name="pos"></param>
         /// <param name="unt"></param>
-        private void setzteStandartwerte(Position pos, List<Person> unt)
+        private void SetzteStandartwerte(Position pos, List<Person> unt)
         {
             ///EXAMP Coustom Todo/Task Keyword : Extras -> Optionen -> Umgebung -> Aufgabenliste
 

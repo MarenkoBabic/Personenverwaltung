@@ -1,0 +1,79 @@
+Erstelle eine Konsolenapplikation namens Personenverwaltung.Konsole
+Eine Projektmappe namens Personenverwaltung
+Eine Klassenbiliothek namens Personenverwaltung.Bibliothek
+
+In der Bibliothek erstelle folgende Klasse
+Erstelle eine Klasse Person:
+> diese hat folgende Felder: _vorname, _nachname, _geburtsdatum, _svnr
+> diese hat folgende Eigenschaften:
+	Vorname (get;set), Nachname (get;set) beide dürfen nicht Leer sein
+	Geburtsdatum (dieses darf nur beim Erstellen einer Instanz gesetzt werden)
+	Svnr (diese darf nur 10stellig sein, außerdem müssen die letzten 6 Stellen dem Geburtsdatum entsprechen)
+	VollstaendigerName (im Format "Nachname, Vorname")
+> diese hat einen Standardkonstruktor in dem der Name john doe vergeben wird und das aktuelle Datum verwendet wird, die svnr soll zufällig vergeben werden
+> diese hat einen weiteren Konstruktor der für alle Felder Parameter bekommt
+> Während des Debuggens soll im Debug-Fenster der Vorname, Nachname und das Geburtsdatum angezeigt werden (S.226)
+
+Erweiterung:
+> von der Klasse dürfen keine Instanzen erzeugt werden, welche Methoden würde es geben um dies zu verhindern?
+
+> Erzeuge eine weitere Klasse namens Vorgesetzter mit folgenden Merkmalen:
+	> Ein Vorgesetzter ist eine Person
+	> Ein Vorgesetzter hat eine Sammlung von Untergebenen die eine dynamische Größe hat
+	> Ein Untergebener muss eine Person sein
+	> Ein Vorgesetzter hat eine Position, diese bestimmt wie viele Untergebene ein Vorgesetzter haben darf und es gibt folgende Auflistung: Mentor (bis inkl. 2), Teamleiter (bis inkl. 15), Abteilungsleiter (bis inkl. 50), Konzernleiter (keine Grenze)
+	> Die Untergebenen dürfen nur gelesen werden
+	> Es soll einen Konstruktor geben der eine Liste von Untergebenen übernimmt
+	> Es soll einen Konstruktor geben der eine Liste von Untergebenen und alle Personendaten übernimmt
+	
+
+	> Es soll eine Methode HinzufuegenUntergebenen geben der eine Person zum Vorgesetzten hinzufügt, sofern die Maximalgröße der Position das zulässt
+	> Es soll eine Methode EntferneUntergebenen geben die eine Person anhand der _svnr aus der Liste der Untergebenen entfernt
+	> Es soll eine Methode EntferneUntergebene geben die alle Personen die älter als ein bestimmtes Datum sind entfernt.
+
+Ideen
+
+1) Mitarbeiter ist eine Person
+	> Ein Mitarbeiter hat ein Gehalt, dieses darf nicht negativ sein
+	> Ein Mitarbeiter kann nur mit Angabe aller Daten erzeugt werden
+
+2a) Converter von Mitarbeiter <-> Vorgesetzten
+	> Erstelle eine statische Klasse Converter
+	> Diese soll eine Methode ToMitarbeiter(Vorgesetzter) besitzen und einen Mitarbeiter aus einem Vorgesetzen erstellen
+	> Diese soll eine Methode ToVorgesetzter(Mitarbeiter) besitzen und einen Vorgesetzen aus einem Mitarbeiter erstellen
+
+
+2b) Erstelle eine Erweiterungsmethode für den Typ Vorgeseter, die einen Vorgesetzten zu einem Mitarbeiter umwandelt. Diese soll ToMitarbeiter genannt werden.
+	Erstelle eine Erweiterungsmethode für den Typ Mitarbeiter, die einen Mitarbeiter zu einem Vorgesetzen umwandelt. Hierbei soll der Vorgesetzte auch gleich Untergebene mitbekommen. Diese soll ToVorgesetzter genannt werden.
+
+3) Erzeuge eine Datenstruktur Personalliste
+	> Eine Personalliste soll dynamisch erweiter- und reduzierbar sein (S.101, 135)
+	> Eine Personalliste darf nur Datentypen beinhalten die von Person erben/kompatibel sind
+	> Die Personalliste soll mit einer foreach-Schleife durchlaufbar sein (S.134)
+	> Die Personalliste soll immer nach Geburtsdatum absteigend sortiert sein
+
+	//STEHENGEBLIEBEN
+4) Firma
+	> Eine Firma bestizt Personal vom Typ Personalliste
+	> Beim erstellen einer Firma wird mind. 1 Vorgesetzten und 1 Untergebenen benötigt
+	> Eine Firma besitzt eine Firmenbezeichnung
+	> Eine Firma hat eine Sammlung von Einnahmequellen vom Typ Einnahmequelle
+	> Eine Firma hat eine Methode EinnahmequelleErschliessen(Einnahmequelle), die eine Einnahmequelle hinzufügt
+	> Eine Firma hat eine Methode EinnahmequelleAufgeben(Einnahmequelle), die eine Einnahmequelle entfernt
+	> Eine Firma hat eine Eigenschaft AktuelleEinnahmen die die Summe aller Einnahmequellen liefert
+	> Eine Firma hat eine Methode Einstellen(Person) die eine Person zur Personalliste hinzufügt
+	> Eine Firma hat eine Methode Feuern(Person) die eine Person aus der Personalliste entfernt
+
+5) Einnahmequelle
+	> Eine Einnahmequelle hat eine Bezeichnung
+	> Eine Einnahmequelle hat einen Betrag, den man einnimmt
+
+6) WeltWirtschaftWert
+	> Der WeltWirtschaftsWert soll als Singleton existieren
+	> Der WeltWirtschaftsWert hat eine Sammlung von Firmen
+	> Der WeltWirtschaftsWert hat eine Methode LiefereFirmenwert die alle Firmen und ihre Aktuellen Einnahmen liefert
+	> Der WeltWirtschaftsWert hat eine Methode LieferePersonalmacht die alle Firmen und ihre Anzahl and Personal liefert
+
+
+Zusatz:
+Damit man sich leichter tut, kann man bei jeder Klasse die keine Standardkonstruktor hat, statische Methoden ausdenken die einem ein generiertes Objekt des Datentyps liefert.

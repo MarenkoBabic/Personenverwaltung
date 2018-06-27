@@ -7,6 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personenverwaltung.Konsole"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Personenverwaltung.Bibliothek", "Personenverwaltung.Bibliothek\Personenverwaltung.Bibliothek.csproj", "{3A025ADC-F9A4-4BBA-873E-8E455D916D97}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{994F890B-3B94-4419-9FBF-AFE245EB6ED0}"
+	ProjectSection(SolutionItems) = preProject
+		Person.txt = Person.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
